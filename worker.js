@@ -91,7 +91,7 @@ const signup = async (req, res) => {
             const resultUser = await connection.query(queryCreateUser, [first_name, last_name, email_id,company_name]);
             const userId = resultUser.insertId;
             console.log(userId)
-            const queryforHashEntry=`SELECT user_id FROM abc_da.user_data WHERE email_id=?`;
+            const queryforHashEntry=`SELECT user_id FROM user_data WHERE email_id=?`;
             const resultquery=await connection.query(queryforHashEntry,[email_id]);
             console.log(resultquery);
             const queryCreateHashData = `insert into hash_data(user_id, hash_value) VALUES(?, ?);`;
