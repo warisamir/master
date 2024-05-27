@@ -160,6 +160,10 @@ const sign = async (req, res) => {
 // Auth route
 app.post('/api/auth/login',sign);
 app.post('/api/auth/signup', signup);
+app.get('/',(req,res)=>{
+    console.log("Server started on port 3000");
+    return res.json({message:"link working"})
+})
 
 // HTTP Server
 const server = app.listen(PORT, () => {
