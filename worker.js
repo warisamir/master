@@ -9,7 +9,7 @@ const cors = require('cors');
 // const multer = require('multer');
 // const multerS3 = require('multer-s3');
 // const path = require('path');
-const PORT = 5000;
+const PORT = 3000;
 const app=express();
 app.use(bodyParser.json());
 app.use(express.json());
