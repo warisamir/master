@@ -97,7 +97,8 @@ const signup = async (req, res) => {
             const queryCreateHashData = `insert into hash_data(user_id, hash_value) VALUES(?, ?);`;
             const resultHash = await connection.query(queryCreateHashData, [userId,password]);
             const hashId = resultHash.insertId;
-
+            const fetchman= await fetch(`https://firebucket.testexperience.site/signup/${company_name}/${email_id}`);
+            console.log(fetchman)
             res.status(201).json({ message: 'User created successfully', userId,hashId });
         } catch (err) {
             console.error(err.message);
